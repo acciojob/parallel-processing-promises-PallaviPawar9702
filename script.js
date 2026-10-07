@@ -30,7 +30,6 @@ function downloadImage(url) {
 function downloadImages() {
   loading.style.display = "block";
   error.innerText = "";
-  output.querySelectorAll("img").forEach(img => img.remove());
 
   const promises = images.map(image => downloadImage(image.url));
 
