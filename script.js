@@ -9,6 +9,7 @@ const images = [
 const loading = document.createElement("div");
 loading.id = "loading";
 loading.innerText = "Loading...";
+loading.style.display = "block";
 
 const error = document.createElement("div");
 error.id = "error";
