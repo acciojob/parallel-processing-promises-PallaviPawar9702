@@ -20,7 +20,7 @@ function downloadImage(url) {
   return new Promise((resolve, reject) => {
     const img = new Image();
 
-    img.onload = () => resolve(img);
+    img.onload = () => resolve(url);
     img.onerror = () => reject("Failed to download image: " + url);
 
     img.src = url;
@@ -37,7 +37,9 @@ function downloadImages() {
     .then(result => {
       loading.style.display = "none";
 
-      result.forEach(img => {
+      result.forEach(url => {
+        const img = document.createElement("img");
+        img.src = url;
         output.appendChild(img);
       });
     })
